@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:two_wheel_vehicle/screens/my_vehicle_screen.dart';
 import 'package:two_wheel_vehicle/screens/navigator_helper.dart';
-
 import '../config.dart';
 import '../widgets.dart';
 
@@ -19,9 +18,9 @@ class _LocationScreenState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: NeumorphicColors.background,
         appBar: AppBar(
-          backgroundColor: backgroundColor,
+          backgroundColor: NeumorphicColors.background,
           // leading: Image.asset('assets/icons/back_icon.png',fit: BoxFit.fill,),
           leading: Icon(Icons.arrow_back_ios),
           title: Text(
@@ -58,11 +57,10 @@ class _LocationScreenState extends State<LocationScreen> {
                         //  boxShape: NeumorphicBoxShape.circle(),
                         ),
                     child: Container(
-                        // height: 200,
                         // color: Colors.blue,
                         width: MediaQuery.of(context).size.width,
                         child: Image.asset(
-                          'assets/icons/map.png',
+                          'image/map.png',
                           fit: BoxFit.fill,
                         )),
                   ),
@@ -72,7 +70,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       children: [
                         Icon(Icons.my_location, color: Color(0xff2DAC00)),
                         Text(
-                          ' Use Current Loctaion',
+                          ' Use Current Location',
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontSize: 12,
@@ -83,14 +81,17 @@ class _LocationScreenState extends State<LocationScreen> {
                       ],
                     ),
                   ),
-                  CustomTextField(
-                    text: 'Street',
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: myTextField(text: 'Street'),
                   ),
-                  CustomTextField(
-                    text: 'City',
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: myTextField(text: 'City'),
                   ),
-                  CustomTextField(
-                    text: 'Zip Code',
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: myTextField(text: 'Zip Code'),
                   ),
 
                   Padding(
